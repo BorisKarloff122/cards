@@ -1,1 +1,15 @@
-<p>main works!</p>
+<header>
+  <div class="container">
+    <div class="menu">
+      <a [routerLink]="'/collection'">Collection</a>
+      <a [routerLink]="'/battle'">Battle</a>
+    </div>
+  </div>
+</header>
+<main>
+  <div class="playerButtons button_container">
+    <button class="player-buttons playerInfo"><mat-icon>manage_accounts</mat-icon></button>
+    <button class="player-buttons playerStats"><mat-icon>content_paste</mat-icon></button>
+  </div>
+  <router-outlet></router-outlet>
+</main>
