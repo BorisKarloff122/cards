@@ -1,0 +1,9 @@
+.auth{
+  background-image:url('../../../assets/img/main_bg.jpg');
+  display:flex;
+  align-items: center;justify-content: center;
+  height:100vh;
+  background-size:cover;
+  background-position:center;
+  background-attachment: fixed;
+}

@@ -1,0 +1,39 @@
+.formBlock{
+  background-color:#fff;
+  border-radius: 15px;
+  width:500px;
+  padding:20px 15px;
+  display:flex;
+  align-items: flex-start;
+  flex-direction: column;
+  margin:0 auto;
+}
+
+.formBlock form{
+  display:flex;
+  flex-flow:column nowrap;
+  align-items: center;
+  justify-content: center;
+  width:100%;
+}
+
+form mat-form-field{
+  width:100%;
+  position: relative;
+}
+
+.formBlock .icon{
+  position:absolute;
+  right:0;
+  top:0;
+  z-index:2;
+}
+
+.line span{
+  margin-right:10px;
+}
+
+.line{
+  width:100%;
+  margin:20px auto;
+}

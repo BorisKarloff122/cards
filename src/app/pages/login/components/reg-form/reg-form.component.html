@@ -1,0 +1,26 @@
+<div class="formBlock">
+  <div class="loginImage"></div>
+  <div class="title">Sign in
+    <div class="sub_title">Fill the form to sign in</div>
+  </div>
+  <form [formGroup]="regForm">
+    <mat-form-field>
+      <input matInput formControlName="userName" type="text" placeholder="User Name">
+      <mat-error *ngIf="getter.userName.invalid && getter.us">
+        <span *ngIf = "getter.userName.value.length === 0"> User name cannot be empty!</span>
+        <span *ngIf = "getter.userName.value.length < 6"> User name cannot be shorter than 6 characters!
+          Entered {{getter.userName.value.length}} characters</span>
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput formControlName="userPassword" type="password" placeholder="User Password">
+    </mat-form-field>
+
+    <mat-form-field [className]="getter.userPassword.value.length > 6 ? 'visible': 'hidden'">
+      <input matInput placeholder="Repeat Password" type="password" (blur)="passRepeat($event)">
+    </mat-form-field>
+    <div class="actions">
+      <button mat-raised-button (click)="submitForm()">Sign In</button>
+    </div>
+  </form>
+</div>

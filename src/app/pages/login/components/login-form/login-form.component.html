@@ -1,0 +1,30 @@
+<div class="formBlock">
+  <div class="loginImage"></div>
+  <div class="title">Welcome Back!</div>
+  <form [formGroup] = "loginForm">
+    <mat-form-field>
+      <input matInput type='text' formControlName="userName" placeholder="User Name">
+      <mat-error *ngIf = "getter.userName.invalid && getter.userName.touched
+                          || isSubmitted && getter.userName.invalid">
+        <span *ngIf = "getter.userName.value.length === 0"> User name cannot be empty!</span>
+        <span *ngIf = "getter.userName.value.length < 6"> User name cannot be shorter than 6 characters!
+          Entered {{getter.userName.value.length}} characters</span>
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput type = "{{showPassword ? 'text': 'password'}}" formControlName="userPassword" placeholder="Password">
+        <mat-icon class="icon" (click)="changePasswordView()">{{showPassword ? 'visibility' : 'visibility_off'}}</mat-icon>
+        <mat-error *ngIf = 'getter.userPassword.invalid && getter.userPassword.touched || isSubmitted && getter.userPassword.invalid'>
+          <span>Password field must not be empty</span>
+        </mat-error>
+    </mat-form-field>
+    <div class="actions">
+      <div class="line">
+        <span>New?</span>
+        <a class ="signLink" routerLink = "/register">Sign In</a>
+      </div>
+      <button mat-raised-button (click)="submitForm()">Log In</button>
+    </div>
+  </form>
+</div>
+
