@@ -6,19 +6,36 @@
   <form [formGroup]="regForm">
     <mat-form-field>
       <input matInput formControlName="userName" type="text" placeholder="User Name">
-      <mat-error *ngIf="getter.userName.invalid && getter.us">
+      <mat-error *ngIf="getter.userName.invalid && isSubmitted">
         <span *ngIf = "getter.userName.value.length === 0"> User name cannot be empty!</span>
-        <span *ngIf = "getter.userName.value.length < 6"> User name cannot be shorter than 6 characters!
+        <span *ngIf = "0 < getter.userName.value.length < 6"> User name cannot be shorter than 6 characters!
           Entered {{getter.userName.value.length}} characters</span>
       </mat-error>
     </mat-form-field>
     <mat-form-field>
-      <input matInput formControlName="userPassword" type="password" placeholder="User Password">
+      <input matInput formControlName="userPassword" type="text" placeholder="User Password">
+      <mat-error *ngIf="getter.userPassword.invalid && isSubmitted">
+        <span *ngIf = "getter.userPassword.value.length === 0"> Password cannot be empty!</span>
+        <span *ngIf = "getter.userPassword.value.length < 6">
+          Password cannot be shorter than 6 characters!
+          Entered {{getter.userPassword.value.length}} characters
+        </span>
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field [className]="getter.userPassword.value.length > 5 ? 'visible': 'hidden'">
+      <input name="passMatch" matInput formControlName="passwordMatch" placeholder="Repeat Password" type="text" (input) = "passRepeat()" autoComplete='off'>
+        <span class="mat-error" *ngIf="!passMatch && getter.passwordMatch.dirty">Passwords must match</span>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput formControlName="email" type="text" placeholder="Email">
+      <mat-error *ngIf="getter.email.invalid && isSubmitted">
+        <span *ngIf = "getter.email.value.length === 0"> Email cannot be empty!</span>
+        <span *ngIf = "getter.email.dirty &&
+        getter.email.value.length > 0 &&
+        getter.email.invalid">Please enter a valid email</span>
+      </mat-error>
     </mat-form-field>
 
-    <mat-form-field [className]="getter.userPassword.value.length > 6 ? 'visible': 'hidden'">
-      <input matInput placeholder="Repeat Password" type="password" (blur)="passRepeat($event)">
-    </mat-form-field>
     <div class="actions">
       <button mat-raised-button (click)="submitForm()">Sign In</button>
     </div>
