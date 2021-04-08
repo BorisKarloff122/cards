@@ -14,3 +14,15 @@ span.mat-error{
 .mat-form-field-appearance-legacy .mat-form-field-underline {
   background-color: rgba(0,0,0,.42);
 }
+
+.dialogBox{
+  background-image:url('./assets/img/banner_red.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+  border-radius: 15px;
+  padding:20px 15px;
+  display:flex;
+  align-items: flex-start;
+  flex-direction: column;
+}

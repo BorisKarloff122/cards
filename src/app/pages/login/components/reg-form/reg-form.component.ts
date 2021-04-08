@@ -36,14 +36,12 @@ export class RegFormComponent implements OnInit {
     this.passMatch = this.getter.userPassword.value === this.getter.passwordMatch.value;
   }
 
-
-
   public submitForm(): void{
     this.isSubmitted = true;
     if(this.regForm.valid && this.isSubmitted){
         this.loginService.userRegister(this.regForm.value).subscribe((res) => {
-          this.isSubmitted === false;
-          this.router.
+          this.isSubmitted = false;
+          this.router.navigate(['login']);
         });
     }
   }

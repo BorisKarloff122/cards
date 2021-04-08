@@ -1,20 +1,31 @@
 .formBlock{
-  background-color:#fff;
-  border-radius: 15px;
   width:500px;
-  padding:20px 15px;
-  display:flex;
-  align-items: flex-start;
-  flex-direction: column;
   margin:0 auto;
 }
 
 .formBlock form{
   display:flex;
+  max-width:280px;
+  padding-bottom:150px;
   flex-flow:column nowrap;
   align-items: center;
   justify-content: center;
+  margin:0 auto;
   width:100%;
+}
+
+.formBlock .sub_title{
+  font-size: 13px;
+  font-weight: bold;
+  margin-top:10px;
+}
+.formBlock .title{
+  max-width: 280px;
+  margin: 40px auto 20px auto;
+  font-size: 20px;
+  font-weight: bolder;
+  color: #f4eb2a;
+  text-shadow: 1px 1px 6px rgb(0 0 0 / 29%);
 }
 
 form mat-form-field{
