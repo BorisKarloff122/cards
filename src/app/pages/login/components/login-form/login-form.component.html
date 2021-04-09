@@ -3,27 +3,28 @@
   <div class="title">Welcome Back!</div>
   <form [formGroup] = "loginForm">
     <mat-form-field>
-      <input matInput type='text' formControlName="userName" placeholder="User Name">
+      <input matInput type='text' formControlName="userName" placeholder="User Name or Email">
       <mat-error *ngIf = "getter.userName.invalid && getter.userName.touched
                           || isSubmitted && getter.userName.invalid">
-        <span *ngIf = "getter.userName.value.length === 0"> User name cannot be empty!</span>
-        <span *ngIf = "getter.userName.value.length < 6"> User name cannot be shorter than 6 characters!
-          Entered {{getter.userName.value.length}} characters</span>
+        <span *ngIf = "getter.userName.value.length === 0"> Field cannot be empty!</span>
       </mat-error>
     </mat-form-field>
     <mat-form-field>
         <input matInput type = "{{showPassword ? 'text': 'password'}}" formControlName="userPassword" placeholder="Password">
         <mat-icon class="icon" (click)="changePasswordView()">{{showPassword ? 'visibility' : 'visibility_off'}}</mat-icon>
-        <mat-error *ngIf = 'getter.userPassword.invalid && getter.userPassword.touched || isSubmitted && getter.userPassword.invalid'>
-          <span>Password field must not be empty</span>
+        <mat-error *ngIf = 'getter.userPassword.invalid && getter.userPassword.touched'>
+          <span *ngIf = "getter.userPassword.value.length === 0">Password cannot not be empty</span>
+          <span *ngIf = "getter.userPassword.value.length < 6 && getter.userPassword.value.length > 0">
+            User Password cannot be shorter than 6 characters!
+          Entered {{getter.userPassword.value.length}} characters</span>
         </mat-error>
     </mat-form-field>
     <div class="actions">
       <div class="line">
         <span>New here?</span>
-        <a class ="signLink" routerLink = "/register">Sign In</a>
+        <a class ="signLink" routerLink = "/register">Sign Up</a>
       </div>
-      <button mat-raised-button (click)="submitForm()">Log In</button>
+      <button mat-raised-button (click)="submitForm()">Sign In</button>
     </div>
   </form>
 </div>

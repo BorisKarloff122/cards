@@ -13,7 +13,20 @@ export class LoginService {
   ) { }
 
   public userRegister (user: User): Observable<User>{
-    return this.http.post<User>(' http://localhost:3000/users', user);
+    return this.http.post<User>('http://localhost:3000/users', user);
   }
-  
+
+  public getUser (userParam: string): Observable<User[]>{
+    if(userParam.indexOf('@')!== - 1){
+      return this.http.get<User[]>(`http://localhost:3000/users?email=${userParam}`);
+    }
+    else{
+      return this.http.get<User[]>(`http://localhost:3000/users?userName=${userParam}`);
+    }
+  }
+
+  public login (user: User): Observable<User>{
+    return this.http.post<User>('http://localhost:3000/activeUser', user);
+  }
+
 }

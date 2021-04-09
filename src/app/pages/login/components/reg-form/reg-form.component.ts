@@ -12,6 +12,7 @@ export class RegFormComponent implements OnInit {
   public regForm!: FormGroup;
   public isSubmitted: boolean = false;
   public passMatch: boolean = false;
+  public regMessage: string = '';
 
   constructor(
     private fb: FormBuilder,
@@ -25,7 +26,7 @@ export class RegFormComponent implements OnInit {
 
   public buildForm(): void{
     this.regForm = this.fb.group({
-      userName: ['', [Validators.required, Validators.minLength(6)]],
+      userName: ['', [Validators.required]],
       userPassword: ['', [Validators.required, Validators.minLength(6)]],
       passwordMatch: ['', [Validators.required]],
       email: ['',[Validators.required, Validators.email]]
@@ -41,6 +42,7 @@ export class RegFormComponent implements OnInit {
     if(this.regForm.valid && this.isSubmitted){
         this.loginService.userRegister(this.regForm.value).subscribe((res) => {
           this.isSubmitted = false;
+          // this.regMessage = 'Successfully registered!';
           this.router.navigate(['login']);
         });
     }

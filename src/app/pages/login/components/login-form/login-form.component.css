@@ -16,7 +16,7 @@
 
 .formBlock form{
   display:flex;
-  max-width:280px;
+  max-width:330px;
   padding-bottom:150px;
   margin:0 auto;
   flex-flow:column nowrap;
@@ -57,3 +57,42 @@ form mat-form-field{
 .line a{
   color:#fff;
 }
+
+.mat-raised-button{
+  border: 1px solid #e3db26;
+  background: #ec8e61;
+  color: #ffffff;
+}
+
+.mat-input-element{
+  color:#fff;
+}
+
+::ng-deep .mat-form-field.mat-form-field-invalid .mat-form-field-ripple, .mat-form-field.mat-form-field-invalid .mat-form-field-ripple.mat-accent{
+  background-color: #f4eb2a;
+}
+
+::ng-deep .mat-form-field.mat-form-field-invalid .mat-form-field-ripple, .mat-form-field.mat-form-field-invalid .mat-form-field-ripple.mat-accent{
+  color: #f4eb2a;
+}
+
+.mat-input-element,
+.mat-form-field.mat-warn .mat-input-element, .mat-form-field-invalid .mat-input-element {
+  caret-color: #f4eb2a;
+}
+
+.mat-form-field.mat-form-field-invalid .mat-form-field-ripple, .mat-form-field.mat-form-field-invalid .mat-form-field-ripple.mat-accent{
+  background-color:#fff;
+}
+
+::ng-deep .mat-form-field-label,
+::ng-deep .mat-form-field.mat-form-field-invalid .mat-form-field-label {
+  color:  #fff!important;
+}
+
+.mat-error {
+  color: #fff;
+}
+
+
+

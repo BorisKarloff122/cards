@@ -1,6 +1,22 @@
 {
-  "users":[],
-  "activeUser":[],
+  "users": [
+    {
+      "userName": "tony",
+      "userPassword": "123",
+      "passwordMatch": "123",
+      "email": "test@test.com",
+      "id": 1
+    }
+  ],
+  "activeUser": [
+    {
+      "userName": "tony",
+      "userPassword": "123",
+      "passwordMatch": "123",
+      "email": "test@test.com",
+      "id": 1
+    }
+  ],
   "decks": [],
-  "cards":[]
+  "cards": []
 }

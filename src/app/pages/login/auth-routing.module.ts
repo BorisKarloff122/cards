@@ -8,9 +8,6 @@ import {RegFormComponent} from "./components/reg-form/reg-form.component";
 const routes: Routes = [
   {path:'', component: LoginFormComponent},
   {path:'register', component: RegFormComponent},
-  {path:'main', canActivate: [LoginGuard], loadChildren:() => import('../../pages/main/main.module')
-      .then(m => m.MainModule) },
-  {path:'**', redirectTo:'', pathMatch:'full'}
 ];
 
 @NgModule({

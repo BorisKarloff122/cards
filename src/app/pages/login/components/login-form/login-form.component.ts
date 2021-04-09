@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {AbstractControl, FormBuilder, FormGroup, Validators} from "@angular/forms";
+import { AbstractControl, FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { LoginService } from "../../services/login.service";
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-login-form',
@@ -10,9 +12,11 @@ export class LoginFormComponent implements OnInit {
   public loginForm!: FormGroup;
   public showPassword: boolean = false;
   public isSubmitted: boolean = false;
-
+  public loginMessage: string = '';
   constructor(
-    private fb:FormBuilder
+    private fb:FormBuilder,
+    private loginService: LoginService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -26,7 +30,7 @@ export class LoginFormComponent implements OnInit {
   public buildForm(): void{
     this.loginForm = this.fb.group(
       {
-        userName: ['', [Validators.required, Validators.minLength(6)]],
+        userName: ['', [Validators.required]],
         userPassword: ['', Validators.required]
       }
     )
@@ -35,7 +39,19 @@ export class LoginFormComponent implements OnInit {
   public submitForm(): void{
     this.isSubmitted = true;
     if(this.loginForm.valid){
-      console.log('valid');
+      this.loginService.getUser(this.loginForm.value.userName).subscribe((res) =>{
+          let responseMatch = res.find((entry) => entry.userPassword === this.loginForm.value.userPassword);
+          if(!responseMatch){
+            this.loginMessage = 'Invalid password or password';
+          }
+          else{
+            this.router.navigateByUrl('/main');
+            // this.loginService.login(responseMatch).subscribe(() => {
+            //   this.router.navigateByUrl('../main');
+            // });
+          }
+        }
+      )
     }
   }
 
