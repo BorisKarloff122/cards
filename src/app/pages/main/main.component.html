@@ -1,15 +1,6 @@
-<header>
-  <div class="container">
-    <div class="menu">
-      <a routerLink = "'/collection'">Collection</a>
-      <a routerLink = "'/battle'">Battle</a>
-    </div>
-  </div>
-</header>
-<main>
-  <div class="playerButtons button_container">
-    <button class="player-buttons playerInfo"><mat-icon>manage_accounts</mat-icon></button>
-    <button class="player-buttons playerStats"><mat-icon>content_paste</mat-icon></button>
-  </div>
+
+<main class="auth">
+  <app-header></app-header>
   <router-outlet></router-outlet>
+  <app-footer></app-footer>
 </main>

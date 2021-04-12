@@ -42,7 +42,7 @@ export class LoginFormComponent implements OnInit {
       this.loginService.getUser(this.loginForm.value.userName).subscribe((res) =>{
           let responseMatch = res.find((entry) => entry.userPassword === this.loginForm.value.userPassword);
           if(!responseMatch){
-            this.loginMessage = 'Invalid password or password';
+            this.loginMessage = 'Invalid username or password';
           }
           else{
             this.router.navigateByUrl('/main');

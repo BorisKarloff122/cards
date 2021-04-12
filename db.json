@@ -5,6 +5,8 @@
       "userPassword": "123",
       "passwordMatch": "123",
       "email": "test@test.com",
+      "selectedWarlord": "Knight",
+      "DeckId": 1,
       "id": 1
     }
   ],
@@ -17,6 +19,20 @@
       "id": 1
     }
   ],
-  "decks": [],
-  "cards": []
+  "warlords": [
+    {
+      "Knight": {},
+      "Mage": {},
+      "Rogue": {}
+    }
+
+  ],
+  "decks": [
+    {
+      "id": 1,
+      "cardsId": []
+    }
+  ],
+  "cards": [],
+  "stats": []
 }
