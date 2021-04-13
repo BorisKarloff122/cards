@@ -73,8 +73,9 @@ form mat-form-field{
 }
 
 
-.hidden{
+form .hidden{
   height:1px;
+  margin:0 auto;
   opacity: 0;
   overflow: hidden;
   transition-duration: 0.4s;

@@ -5,9 +5,16 @@
       "userPassword": "123",
       "passwordMatch": "123",
       "email": "test@test.com",
-      "selectedWarlord": "Knight",
-      "DeckId": 1,
+      "decks": [],
+      "selectedDeck": 1,
       "id": 1
+    },
+    {
+      "userName": "14141414",
+      "userPassword": "124141241",
+      "passwordMatch": "124124124",
+      "email": "124124124@mail.com",
+      "id": 2
     }
   ],
   "activeUser": [
@@ -21,15 +28,23 @@
   ],
   "warlords": [
     {
-      "Knight": {},
-      "Mage": {},
-      "Rogue": {}
+      "knight": {
+        "imagePath": "../assets/img/warlords/knight.jpg",
+        "name": "Knight",
+        "id": 1
+      },
+      "mage": {
+        "id": 2
+      },
+      "rogue": {
+        "id": 3
+      }
     }
-
   ],
   "decks": [
     {
       "id": 1,
+      "warlord": "Knight",
       "cardsId": []
     }
   ],

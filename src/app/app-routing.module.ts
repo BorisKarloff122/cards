@@ -8,7 +8,6 @@ const routes: Routes = [
       .then(m => m.AuthModule)},
   {path:'main', canActivate: [LoginGuard], loadChildren:() => import('./pages/main/main.module')
       .then(m => m.MainModule) },
-  {path:'**', redirectTo:'', pathMatch:'full'}
 ];
 
 @NgModule({

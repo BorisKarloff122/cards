@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {AbstractControl, FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {LoginService} from "../../services/login.service";
 import {Router} from "@angular/router";
+import {PasswordMatchValidatorDirective} from "../../../../shared/directives/password-match-validator.directive";
 
 @Component({
   selector: 'app-reg-form',
@@ -13,6 +14,7 @@ export class RegFormComponent implements OnInit {
   public isSubmitted: boolean = false;
   public passMatch: boolean = false;
   public regMessage: string = '';
+  public showPassword: boolean = false;
 
   constructor(
     private fb: FormBuilder,
@@ -46,6 +48,10 @@ export class RegFormComponent implements OnInit {
           this.router.navigate(['login']);
         });
     }
+  }
+
+  public changePasswordView(): void{
+      this.showPassword = !this.showPassword
   }
 
   public get getter(): { [p: string]: AbstractControl } {

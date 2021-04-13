@@ -80,10 +80,15 @@ form mat-form-field{
 .mat-form-field.mat-warn .mat-input-element, .mat-form-field-invalid .mat-input-element {
   caret-color: #f4eb2a;
 }
-
-.mat-form-field.mat-form-field-invalid .mat-form-field-ripple, .mat-form-field.mat-form-field-invalid .mat-form-field-ripple.mat-accent{
+.mat-form-field-appearance-legacy .mat-form-field-underline{
   background-color:#fff;
 }
+
+.mat-form-field.mat-form-field-invalid .mat-form-field-ripple, .mat-form-field.mat-form-field-invalid .mat-form-field-ripple.mat-accent,
+.mat-form-field-appearance-legacy .mat-form-field-underline{
+  background-color:#fff;
+}
+
 
 ::ng-deep .mat-form-field-label,
 ::ng-deep .mat-form-field.mat-form-field-invalid .mat-form-field-label {
