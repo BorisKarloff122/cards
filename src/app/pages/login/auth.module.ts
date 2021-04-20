@@ -7,7 +7,7 @@ import { LoginGuard } from "../../shared/guards/loginGuard.guard";
 import { AuthRoutingModule } from "./auth-routing.module";
 import { MaterialModule } from "../../shared/modules/material.module";
 import { ReactiveFormsModule } from "@angular/forms";
-import {AppModule} from "../../app.module";
+
 
 @NgModule({
   declarations: [
@@ -20,11 +20,9 @@ import {AppModule} from "../../app.module";
     MaterialModule,
     ReactiveFormsModule,
     AuthRoutingModule,
-    AppModule
   ],
   providers:[
     LoginGuard,
-
   ]
 })
 export class AuthModule { }

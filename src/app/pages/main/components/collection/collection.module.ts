@@ -2,11 +2,16 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SideBarComponent } from './components/side-bar/side-bar.component';
 import { MainBarComponent } from './components/main-bar/main-bar.component';
+import { CollectionComponent } from "./collection.component";
 
 
 
 @NgModule({
-  declarations: [SideBarComponent, MainBarComponent],
+  declarations: [
+    CollectionComponent,
+    SideBarComponent,
+    MainBarComponent
+  ],
   exports: [
     SideBarComponent,
     MainBarComponent

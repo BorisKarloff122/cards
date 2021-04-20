@@ -1,8 +1,24 @@
   <div class="container">
+    <div class="side-bar">
+      <a [routerLink]="'collection'" class="menu-item">
+        Collection
+      </a>
+      <a [routerLink] = "'decks'">
+        Decks
+      </a>
+      <a [routerLink]="'warlords'">
+        Warlords
+      </a>
+    </div>
     <div class="playerButtons button_container">
+      <div class="player-info">
+        <div class="name"></div>
+        <div class="player-lvl"><span></span></div>
+      </div>
       <button class="player-buttons playerInfo"><mat-icon>manage_accounts</mat-icon></button>
       <button class="player-buttons playerStats"><mat-icon>content_paste</mat-icon></button>
     </div>
+
     <div class="field content">
       <div class="warlord_img big_img_block">
 <!--        <img src="{{player.warlord.imagePath}}"/>-->

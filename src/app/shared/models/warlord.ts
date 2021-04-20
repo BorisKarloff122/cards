@@ -1,5 +1,6 @@
 export interface Warlord {
   name: string;
   id?: number;
-  imagePath: string
+  imagePath: string;
+  ability: string;
 }

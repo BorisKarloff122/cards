@@ -15,6 +15,24 @@
       "passwordMatch": "124124124",
       "email": "124124124@mail.com",
       "id": 2
+    },
+    {
+      "userName": "test@test.com",
+      "userPassword": "1234141",
+      "passwordMatch": "1234141",
+      "email": "test@test.com",
+      "level": 1,
+      "expRequired": 1000,
+      "id": 3
+    },
+    {
+      "userName": "tetst",
+      "userPassword": "12412414",
+      "passwordMatch": "12412414",
+      "email": "tetst@test",
+      "level": 1,
+      "expRequired": 1000,
+      "id": 4
     }
   ],
   "activeUser": [

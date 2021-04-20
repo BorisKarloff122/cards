@@ -99,5 +99,24 @@ form mat-form-field{
   color: #fff;
 }
 
+.login-error{
+  font-size:16px;
+  opacity: 0;
+  height:20px;
+  color:#fff;
+  font-weight:bold;
+  transition-duration: 0.4s;
+  -webkit-transition-duration: 0.4s;
+  -ms-transition-duration:0.4s;
+}
 
+.message{
+  transition-duration: 0.4s;
+  -webkit-transition-duration: 0.4s;
+  -ms-transition-duration:0.4s;
+  opacity: 1;
+}
 
+.mat-form-field-appearance-legacy .mat-form-field-infix{
+  font-size:16px;
+}

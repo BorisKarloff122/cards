@@ -7,18 +7,21 @@
   <form [formGroup]="regForm">
     <mat-form-field>
       <input matInput formControlName="userName" type="text" placeholder="User Name">
-      <mat-error *ngIf="getter.userName.invalid && isSubmitted">
-        <span *ngIf = "getter.userName.value.length === 0"> User name cannot be empty!</span>
+      <mat-error *ngIf="getter.userName.invalid && isSubmitted ||
+       getter.userName.invalid && getter.userName.touched">
+        <span *ngIf = "getter.userName.errors.required"> User name cannot be empty!</span>
       </mat-error>
     </mat-form-field>
     <mat-form-field>
-      <input appPasswordMatchValidator matInput
+      <input matInput
              formControlName="userPassword"
              type="{{showPassword ? 'text': 'password'}}"
-             placeholder="User Password">
+             placeholder="User Password"
+             [(ngModel)]="userPassword">
       <mat-icon class="icon" style="color:#fff" (click)="changePasswordView()">{{showPassword ? 'visibility' : 'visibility_off'}}</mat-icon>
-      <mat-error *ngIf="getter.userPassword.invalid && isSubmitted">
-        <span *ngIf = "getter.userPassword.value.length === 0"> Password cannot be empty!</span>
+      <mat-error *ngIf="getter.userPassword.invalid && isSubmitted
+      || getter.userPassword.invalid && getter.userPassword.touched">
+        <span *ngIf = "getter.userPassword.errors.required"> Password cannot be empty!</span>
         <span *ngIf = "getter.userPassword.value.length > 0 && getter.userPassword.value.length < 6">
           Password cannot be shorter than 6 characters!
           Entered {{getter.userPassword.value.length}} characters
