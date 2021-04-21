@@ -16,14 +16,14 @@ export class MainService {
   ) { }
 
   public getCurrentUser(): Observable<User>{
-    return this.http.get<User>('http://localhost:3000/activeUser');
+    return this.http.get<User>('activeUser');
   }
 
   public getCurrentUserDeck(id): Observable<Deck>{
-    return this.http.get<Deck>(`http://localhost:3000/decks/${id}`);
+    return this.http.get<Deck>(`decks/${id}`);
   }
 
   public getDeckWarlord(lordId): Observable<Warlord>{
-    return  this.http.get<Warlord>(`http://localhost:3000/warlords/${lordId}`)
+    return  this.http.get<Warlord>(`warlords/${lordId}`)
   }
 }

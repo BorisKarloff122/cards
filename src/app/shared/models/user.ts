@@ -7,6 +7,7 @@ export interface User {
   level: number;
   expRequired: number;
   id?: number;
+  icon: string;
   selectedDeck: number | Deck;
   decks: number[];
 }

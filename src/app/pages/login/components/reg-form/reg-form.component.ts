@@ -44,11 +44,18 @@ export class RegFormComponent implements OnInit {
   public submitForm(): void{
     this.isSubmitted = true;
     if(this.regForm.valid && this.isSubmitted){
-      this.regForm.value['level'] = 1;
-      this.regForm.value['expRequired'] = 1000;
+      let userParams: object = {
+        level:1,
+        expRequired: 1000,
+        decks:[],
+        selectedDeck:1,
+        icon: '../assets/img/icons/primaryIcon.jpg'
+      };
+
+      Object.assign(this.regForm.value, userParams);
         this.loginService.userRegister(this.regForm.value).subscribe((res) => {
           this.isSubmitted = false;
-          this.router.navigate(['../login']);
+          this.router.navigate(['../auth/login']);
         });
     }
   }

@@ -25,7 +25,6 @@ export class MenuComponent implements OnInit, OnDestroy {
   this.sub.add(this.mainService.getCurrentUser().subscribe((res) => {
       this.player = res[0];
       this.mainService.currentUser$.next(res[0]);
-      console.log(this.mainService.currentUser$);
     })
   );
   }

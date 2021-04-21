@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { LoginService } from "../../services/login.service";
 import { Router } from "@angular/router";
+import { User } from "../../../../shared/models/user";
 
 @Component({
   selector: 'app-login-form',
@@ -39,13 +40,16 @@ export class LoginFormComponent implements OnInit {
   public submitForm(): void{
     this.isSubmitted = true;
     if(this.loginForm.valid){
-      this.loginService.getUser(this.loginForm.value.userName).subscribe((res) =>{
+      this.loginService.getUser(this.loginForm.value.userName).subscribe((res: User[]) =>{
           let responseMatch = res.find((entry) => entry.userPassword === this.loginForm.value.userPassword);
-          if(!responseMatch){
+          if (res.length === 0){
+            this.loginMessage = 'User does not exist';
+            return;
+          } else if (!responseMatch){
             this.loginMessage = 'Invalid password';
             setTimeout(() => this.loginMessage = '', 2500);
-          }
-          else{
+            return;
+          } else {
             this.router.navigateByUrl('/main');
           }
         }

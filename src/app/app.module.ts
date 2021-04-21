@@ -5,12 +5,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CardComponent } from './shared/components/card/card.component';
 import { AppRoutingModule } from "./app-routing.module";
 import { MaterialModule } from "./shared/modules/material.module";
-import { HttpClientModule } from "@angular/common/http";
+import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
+import {InterceptorService} from "./shared/interceptors/interceptor";
+import { PlayerEditComponent } from './shared/components/player-edit/player-edit.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CardComponent,
+    PlayerEditComponent,
   ],
   imports: [
     BrowserModule,
@@ -19,7 +22,13 @@ import { HttpClientModule } from "@angular/common/http";
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: InterceptorService,
+      multi: true
+    },
+  ],
   exports: [],
   bootstrap: [AppComponent]
 })
