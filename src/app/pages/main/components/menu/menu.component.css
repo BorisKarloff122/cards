@@ -5,3 +5,35 @@
   justify-content: space-between;
   flex-direction: column;
 }
+
+.img_block .img-container{
+  width: 150px;
+  height: 150px;
+  background-color: #ec8e61;
+  border-radius: 360px;
+  position: relative;
+  margin: 0 auto;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.img_block{
+  background-image: url(../../../../../assets/img/small-banner.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: top center;
+  height: 420px;
+  max-width: 170px;
+}
+
+.img_block img{
+  width:100%;
+  height:100%;
+}
+
+.side-bar{
+  position:fixed;
+  left:0;
+  top:0;
+  width:350px;
+}

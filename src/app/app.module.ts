@@ -18,7 +18,6 @@ import { PlayerEditComponent } from './shared/components/player-edit/player-edit
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    MaterialModule,
     AppRoutingModule,
     HttpClientModule
   ],

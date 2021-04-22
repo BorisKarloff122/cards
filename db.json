@@ -7,16 +7,30 @@
       "email": "test@test.com",
       "decks": [],
       "selectedDeck": 1,
-      "icon": "../assets/img/icons/primaryIcon.jpg",
+      "level": 1,
+      "expRequired": 1000,
+      "icon": "../assets/img/warlords/knight.png",
       "id": 1
     }
   ],
   "activeUser": [
+    {
+      "userName": "tony",
+      "userPassword": "123",
+      "passwordMatch": "123",
+      "email": "test@test.com",
+      "decks": [],
+      "selectedDeck": 1,
+      "level": 1,
+      "expRequired": 1000,
+      "icon": "../assets/img/warlords/knight.png",
+      "id": 1
+    }
   ],
   "warlords": [
     {
       "knight": {
-        "imagePath": "../assets/img/warlords/knight.jpg",
+        "imagePath": "../assets/img/warlords/knight.png",
         "name": "Knight",
         "id": 1
       },
@@ -32,9 +46,17 @@
     {
       "id": 1,
       "warlord": "Knight",
-      "cardsId": []
+      "cardsId": [1,1,1,1,1,1,1,1,1,1]
     }
   ],
-  "cards": [],
+  "cards": [
+    {
+      "id": 1,
+      "name": "Soldier",
+      "health": 2,
+      "damage": 2,
+      "imagePath":"../assets/img/warlords/knight.png"
+    }
+  ],
   "stats": []
 }

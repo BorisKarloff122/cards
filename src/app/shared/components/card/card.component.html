@@ -1,9 +1,10 @@
 <div class="card_block card">
   <div class="card_img small_img_block">
-    <img>
+    <img src="{{card.imagePath}}">
   </div>
   <div class="row">
-    <div class="damage-block block"></div>
-    <div class="health-block block"></div>
+    <div class="damage-block block">{{ card.damage }}</div>
+      <div class="ability-block block" *ngIf="abilityShow && card.ability"></div>
+    <div class="health-block block">{{ card.health}}</div>
   </div>
 </div>

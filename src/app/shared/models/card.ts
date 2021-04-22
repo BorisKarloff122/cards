@@ -4,5 +4,5 @@ export interface Card {
   health: number;
   damage: string;
   id: number;
-  ability: string;
+  ability?: string;
 }
