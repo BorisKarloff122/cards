@@ -7,8 +7,8 @@
 }
 
 .img_block .img-container{
-  width: 150px;
-  height: 150px;
+  width: 100px;
+  height: 100px;
   background-color: #ec8e61;
   border-radius: 360px;
   position: relative;
@@ -24,6 +24,8 @@
   background-position: top center;
   height: 420px;
   max-width: 170px;
+  margin-left: 10px;
+  padding: 10px;
 }
 
 .img_block img{
@@ -31,9 +33,63 @@
   height:100%;
 }
 
+.menu{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu a{
+  color:#fff;
+  font-weight:bold;
+  margin:10px 0;
+  font-size:16px;
+  text-decoration: none;
+}
+
 .side-bar{
-  position:fixed;
-  left:0;
-  top:0;
-  width:350px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 350px;
+  height: 100%;
+  background-image:url('../../../../../assets/img/wall_mk3.jpg');
+  background-size: 100% auto;
+  background-repeat: repeat-y;
+  box-shadow: 9px 1px 4px 1px rgb(0 0 0 / 51%),
+              9px 0 8px 1px rgb(208 180 180 / 51%);
+
+}
+
+.player-info{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  width:100%;
+}
+
+.player-stats{}
+
+.player-info .player-buttons{
+  border:1.2px solid #f4eb2a;
+  background-color:transparent;
+  border-radius: 360px;
+  text-align: center;
+  margin:0 10px;
+  vertical-align: middle;
+  width:25px;
+  outline:none;
+  height:25px;
+  cursor: pointer;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.player-buttons mat-icon{
+  color:#f4eb2a;
+  width:20px;
+  height:20px;
+  font-size:15px;
 }
