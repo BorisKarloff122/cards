@@ -46,7 +46,18 @@
     {
       "id": 1,
       "warlord": "Knight",
-      "cardsId": [1,1,1,1,1,1,1,1,1,1]
+      "cardsId": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
     }
   ],
   "cards": [
@@ -55,7 +66,7 @@
       "name": "Soldier",
       "health": 2,
       "damage": 2,
-      "imagePath":"../assets/img/warlords/knight.png"
+      "imagePath": "../assets/img/warlords/knight.png"
     }
   ],
   "stats": []

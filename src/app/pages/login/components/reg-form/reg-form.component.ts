@@ -2,8 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {AbstractControl, FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {LoginService} from "../../services/login.service";
 import {Router} from "@angular/router";
-
-
+import {Subscription} from "rxjs";
 
 @Component({
   selector: 'app-reg-form',
@@ -13,10 +12,11 @@ import {Router} from "@angular/router";
 export class RegFormComponent implements OnInit {
   public regForm!: FormGroup;
   public isSubmitted: boolean = false;
-  public passMatch: boolean = false;
+  public passwordsMatch: boolean = false;
   public regMessage: string = '';
   public showPassword: boolean = false;
-  public userPassword: string = '';
+  private sub: Subscription = new Subscription();
+  private userExist!: boolean;
 
   constructor(
     private fb: FormBuilder,
@@ -28,7 +28,7 @@ export class RegFormComponent implements OnInit {
     this.buildForm();
   }
 
-  public buildForm(): void{
+  private buildForm(): void{
     this.regForm = this.fb.group({
       userName: ['', [Validators.required]],
       userPassword: ['', [Validators.required, Validators.minLength(6)]],
@@ -38,25 +38,23 @@ export class RegFormComponent implements OnInit {
   }
 
   public passRepeat(): void{
-    this.passMatch = this.getter.userPassword.value === this.getter.passwordMatch.value;
+    this.passwordsMatch = this.getter.userPassword.value === this.getter.passwordMatch.value;
+    if(this.passwordsMatch === true){
+      this.regMessage = '';
+    }
   }
 
   public submitForm(): void{
     this.isSubmitted = true;
-    if(this.regForm.valid && this.isSubmitted){
-      let userParams: object = {
-        level:1,
-        expRequired: 1000,
-        decks:[],
-        selectedDeck:1,
-        icon: '../assets/img/icons/primaryIcon.jpg'
-      };
-
-      Object.assign(this.regForm.value, userParams);
-        this.loginService.userRegister(this.regForm.value).subscribe((res) => {
-          this.isSubmitted = false;
-          this.router.navigate(['../auth/login']);
-        });
+    if(this.regForm.valid && this.passwordsMatch && !this.userExist){
+      this.checkIfUserExists(this.getter.userName.value);
+      if(this.userExist){
+        this.regMessage = 'User already exists';
+      }
+      else{
+        Object.assign(this.regForm.value, this.loginService.userStarterDeck);
+        this.sendForm(this.regForm.value)
+      }
     }
   }
 
@@ -68,4 +66,23 @@ export class RegFormComponent implements OnInit {
     return this.regForm.controls;
   }
 
+  private checkIfUserExists(userName: string): void{
+      this.sub.add(
+        this.loginService.getUser(userName).subscribe((res) => {
+            this.userExist = res.length > 0;
+        })
+      );
+  }
+
+  private sendForm(form): void{
+    this.sub.add(
+      this.loginService.userRegister(form).subscribe((res) => {
+        this.isSubmitted = false;
+        this.router.navigate(['../auth/login']);
+      }));
+  }
+
+  ngOnDestroy(){
+    this.sub.unsubscribe();
+  }
 }

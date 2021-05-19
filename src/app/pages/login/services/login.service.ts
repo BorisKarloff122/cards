@@ -12,6 +12,15 @@ export class LoginService {
     private http: HttpClient
   ) { }
 
+  public userStarterDeck: object = {
+    level:1,
+    expRequired: 1000,
+    decks:[],
+    selectedDeck:1,
+    icon: '../assets/img/icons/primaryIcon.jpg'
+  };
+
+
   public userRegister (user: User): Observable<User>{
     return this.http.post<User>('users', user);
   }

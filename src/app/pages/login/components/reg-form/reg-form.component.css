@@ -19,6 +19,7 @@
   font-weight: bold;
   margin-top:10px;
 }
+
 .formBlock .title{
   max-width: 280px;
   margin: 40px auto 20px auto;
@@ -27,6 +28,11 @@
   color: #f4eb2a;
   text-shadow: 1px 1px 6px rgb(0 0 0 / 29%);
 }
+
+.mat-form-field-infix{
+  border-bottom:0;
+}
+
 
 form mat-form-field{
   width:100%;
