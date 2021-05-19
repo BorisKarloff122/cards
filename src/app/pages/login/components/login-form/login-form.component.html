@@ -4,10 +4,10 @@
   <form [formGroup] = "loginForm">
     <div class="login-error" [ngClass]="this.loginMessage !== ''? 'message' : '' ">{{ loginMessage }}</div>
     <mat-form-field>
-      <input matInput type='text' formControlName="userName" placeholder="Email">
+      <input matInput type='text' formControlName="userName" placeholder="Email or User Name">
       <mat-error *ngIf = "getter.userName.invalid && getter.userName.touched
                           || isSubmitted && getter.userName.invalid">
-        <span *ngIf = "getter.userName.errors.required"> Field cannot be empty!</span>
+        <span *ngIf = "getter.userName.errors.required">User Login cannot be empty!</span>
       </mat-error>
     </mat-form-field>
     <mat-form-field>

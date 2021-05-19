@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {AbstractControl, FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {LoginService} from "../../services/login.service";
 import {Router} from "@angular/router";
+import {Subscription} from "rxjs";
 
 @Component({
   selector: 'app-reg-form',
@@ -14,6 +15,8 @@ export class RegFormComponent implements OnInit {
   public passwordsMatch: boolean = false;
   public regMessage: string = '';
   public showPassword: boolean = false;
+  private sub: Subscription = new Subscription();
+  private userExist!: boolean;
 
   constructor(
     private fb: FormBuilder,
@@ -25,7 +28,7 @@ export class RegFormComponent implements OnInit {
     this.buildForm();
   }
 
-  public buildForm(): void{
+  private buildForm(): void{
     this.regForm = this.fb.group({
       userName: ['', [Validators.required]],
       userPassword: ['', [Validators.required, Validators.minLength(6)]],
@@ -43,22 +46,16 @@ export class RegFormComponent implements OnInit {
 
   public submitForm(): void{
     this.isSubmitted = true;
-    if(this.regForm.valid && this.passwordsMatch){
-      let userParams: object = {
-        level:1,
-        expRequired: 1000,
-        decks:[],
-        selectedDeck:1,
-        icon: '../assets/img/icons/primaryIcon.jpg'
-      };
-
-      Object.assign(this.regForm.value, userParams);
-        this.loginService.userRegister(this.regForm.value).subscribe((res) => {
-          this.isSubmitted = false;
-          this.router.navigate(['../auth/login']);
-        });
+    if(this.regForm.valid && this.passwordsMatch && !this.userExist){
+      this.checkIfUserExists(this.getter.userName.value);
+      if(this.userExist){
+        this.regMessage = 'User already exists';
+      }
+      else{
+        Object.assign(this.regForm.value, this.loginService.userStarterDeck);
+        this.sendForm(this.regForm.value)
+      }
     }
-
   }
 
   public changePasswordView(): void{
@@ -67,5 +64,25 @@ export class RegFormComponent implements OnInit {
 
   public get getter(): { [p: string]: AbstractControl } {
     return this.regForm.controls;
+  }
+
+  private checkIfUserExists(userName: string): void{
+      this.sub.add(
+        this.loginService.getUser(userName).subscribe((res) => {
+            this.userExist = res.length > 0;
+        })
+      );
+  }
+
+  private sendForm(form): void{
+    this.sub.add(
+      this.loginService.userRegister(form).subscribe((res) => {
+        this.isSubmitted = false;
+        this.router.navigate(['../auth/login']);
+      }));
+  }
+
+  ngOnDestroy(){
+    this.sub.unsubscribe();
   }
 }

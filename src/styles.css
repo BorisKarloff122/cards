@@ -1,4 +1,5 @@
 html, body { height: 100%; }
+
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .icon{
@@ -30,4 +31,14 @@ span.mat-error{
 
 ::ng-deep .mat-form-field-infix{
   border:0;
+}
+
+.mat-q-error{
+  position: absolute;
+  box-sizing: border-box;
+  left:0;
+  bottom:-75%;
+  color:#fff;
+  width: 100%;
+  font-size:75%;
 }
