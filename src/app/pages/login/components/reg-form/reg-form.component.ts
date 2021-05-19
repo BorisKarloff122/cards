@@ -3,8 +3,6 @@ import {AbstractControl, FormBuilder, FormGroup, Validators} from "@angular/form
 import {LoginService} from "../../services/login.service";
 import {Router} from "@angular/router";
 
-
-
 @Component({
   selector: 'app-reg-form',
   templateUrl: './reg-form.component.html',
@@ -13,10 +11,9 @@ import {Router} from "@angular/router";
 export class RegFormComponent implements OnInit {
   public regForm!: FormGroup;
   public isSubmitted: boolean = false;
-  public passMatch: boolean = false;
+  public passwordsMatch: boolean = false;
   public regMessage: string = '';
   public showPassword: boolean = false;
-  public userPassword: string = '';
 
   constructor(
     private fb: FormBuilder,
@@ -38,12 +35,15 @@ export class RegFormComponent implements OnInit {
   }
 
   public passRepeat(): void{
-    this.passMatch = this.getter.userPassword.value === this.getter.passwordMatch.value;
+    this.passwordsMatch = this.getter.userPassword.value === this.getter.passwordMatch.value;
+    if(this.passwordsMatch === true){
+      this.regMessage = '';
+    }
   }
 
   public submitForm(): void{
     this.isSubmitted = true;
-    if(this.regForm.valid && this.isSubmitted){
+    if(this.regForm.valid && this.passwordsMatch){
       let userParams: object = {
         level:1,
         expRequired: 1000,
@@ -58,6 +58,7 @@ export class RegFormComponent implements OnInit {
           this.router.navigate(['../auth/login']);
         });
     }
+
   }
 
   public changePasswordView(): void{
@@ -67,5 +68,4 @@ export class RegFormComponent implements OnInit {
   public get getter(): { [p: string]: AbstractControl } {
     return this.regForm.controls;
   }
-
 }

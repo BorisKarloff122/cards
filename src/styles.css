@@ -27,3 +27,7 @@ span.mat-error{
   align-items: flex-start;
   flex-direction: column;
 }
+
+::ng-deep .mat-form-field-infix{
+  border:0;
+}

@@ -16,8 +16,7 @@
       <input matInput
              formControlName="userPassword"
              type="{{showPassword ? 'text': 'password'}}"
-             placeholder="User Password"
-             [(ngModel)]="userPassword">
+             placeholder="User Password">
       <mat-icon class="icon" style="color:#fff" (click)="changePasswordView()">{{showPassword ? 'visibility' : 'visibility_off'}}</mat-icon>
       <mat-error *ngIf="getter.userPassword.invalid && isSubmitted
       || getter.userPassword.invalid && getter.userPassword.touched">
@@ -30,13 +29,14 @@
     </mat-form-field>
     <mat-form-field *ngIf="getter.userPassword.value.length > 5">
       <input matInput name="passMatch" formControlName="passwordMatch" placeholder="Repeat Password"
-             type="{{showPassword ? 'text': 'password'}}"
+             type = "{{showPassword ? 'text': 'password'}}"
              (input) = "passRepeat()" autoComplete='off'>
-        <mat-error class="mat-error" *ngIf="passMatch && getter.passwordMatch.dirty">Passwords must match</mat-error>
+        <mat-error
+          class = "mat-error" *ngIf = "passwordsMatch === false">Passwords must match!</mat-error>
     </mat-form-field>
     <mat-form-field>
-      <input matInput formControlName="email" type="text" placeholder="Email">
-      <mat-error *ngIf="getter.email.invalid && isSubmitted">
+      <input matInput formControlName = "email" type="text" placeholder="Email">
+      <mat-error *ngIf = "getter.email.invalid && isSubmitted">
         <span
           *ngIf = "getter.email.value.length === 0"> Email cannot be empty!</span>
         <span
