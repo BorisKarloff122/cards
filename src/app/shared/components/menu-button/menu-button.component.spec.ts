@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PlayComponent } from './play.component';
+import { MenuButtonComponent } from './menu-button.component';
 
-describe('PlayComponent', () => {
-  let component: PlayComponent;
-  let fixture: ComponentFixture<PlayComponent>;
+describe('MenuButtonComponent', () => {
+  let component: MenuButtonComponent;
+  let fixture: ComponentFixture<MenuButtonComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PlayComponent ]
+      declarations: [ MenuButtonComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PlayComponent);
+    fixture = TestBed.createComponent(MenuButtonComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

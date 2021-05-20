@@ -1,0 +1,9 @@
+.menu-button{
+  min-width:150px;
+  max-width:33%;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  transition-duration: 0.4s;
+  -webkit-transition:0.4s;
+}

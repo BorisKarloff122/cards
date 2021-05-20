@@ -18,12 +18,11 @@
 }
 
 .img_block{
-  background-image: url(../../../../../assets/img/small-banner.png);
   background-repeat: no-repeat;
   background-size: contain;
   background-position: top center;
   height: 420px;
-  max-width: 170px;
+  width: 170px;
   margin-left: 10px;
   padding: 10px;
 }
@@ -35,7 +34,9 @@
 
 .menu{
   display: flex;
-  flex-direction: column;
+  width:50%;
+  margin:0 auto;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
 }
@@ -52,14 +53,7 @@
   position: fixed;
   left: 0;
   top: 0;
-  width: 350px;
-  height: 100%;
-  background-image:url('../../../../../assets/img/wall_mk3.jpg');
-  background-size: 100% auto;
-  background-repeat: repeat-y;
-  box-shadow: 9px 1px 4px 1px rgb(0 0 0 / 51%),
-              9px 0 8px 1px rgb(208 180 180 / 51%);
-
+  width: 50px;
 }
 
 .player-info{

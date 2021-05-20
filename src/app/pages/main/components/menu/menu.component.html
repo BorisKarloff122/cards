@@ -1,10 +1,8 @@
   <div class="container">
     <div class="side-bar">
       <div class="img_block">
-        <div class="img-container">
-          <img src="{{player.icon}}">
-        </div>
         <div class="player-stats">
+
           <div class="name">{{player.userName}}</div>
           <div class="player-lvl">Level: {{ player.level }}</div>
         </div>
@@ -14,11 +12,7 @@
         </div>
       </div>
 
-      <div class="menu">
-        <a [routerLinkActive]="'activeLink'" [routerLink]="'collection'">Collection</a>
-        <a [routerLink] = "'decks'">Decks</a>
-        <a [routerLink] = "'warlords'">Warlords</a>
-      </div>
+
     </div>
 
 
@@ -29,6 +23,13 @@
       <div class="warlord_img big_img_block"></div>
     </div>
     <div class="button_block">
+      <div class="menu">
+        <menu-button>Collection</menu-button>
+        <a [routerLinkActive]="'activeLink'" [routerLink]="'collection'">Collection</a>
+        <a [routerLinkActive]="'activeLink'" [routerLink] = "'decks'">Decks</a>
+        <a [routerLinkActive]="'activeLink'" [routerLink]="'stats'">Player Stats</a>
+        <a [routerLinkActive]="'activeLink'" [routerLink] = "'warlords'">Warlords</a>
+      </div>
       <button class="main-button start">Start!</button>
     </div>
 

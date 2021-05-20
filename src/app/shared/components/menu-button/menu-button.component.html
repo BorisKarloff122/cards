@@ -1,0 +1,13 @@
+<div [ngClass]="addClass? addClass : 'menu-button'"
+     [ngStyle]="this.style"
+     *ngIf="!link; else linkButton"
+     class="menu-button">
+  <ng-content></ng-content>
+</div>
+
+<a #linkButton href="{{link}}"
+   [ngClass]="addClass? addClass : 'menu-button'"
+   [ngStyle]="this.style"
+    class="menu-button link-button">
+  <ng-content></ng-content>
+</a>
