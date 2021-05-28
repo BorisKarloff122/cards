@@ -1,9 +1,18 @@
 .menu-button{
   min-width:150px;
-  max-width:33%;
+  height:35px;
+  background: linear-gradient(0, rgb(27 76 224 / 84%) 0%, rgb(25 93 144 / 96%) 16%, rgba(0,212,255,1) 100%);
+  font-weight:500;
+  color:#fff;
+  font-size:16px;
+  border: none;
+  margin: -5px;
+  padding: 0;
+  cursor: pointer;
+  outline: none;
   display:flex;
   align-items: center;
   justify-content: center;
-  transition-duration: 0.4s;
-  -webkit-transition:0.4s;
 }
+
+

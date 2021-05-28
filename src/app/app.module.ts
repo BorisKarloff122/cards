@@ -8,8 +8,6 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from "@angular/common/http";
 import { InterceptorService } from "./shared/interceptors/interceptor";
 import { PlayerEditComponent } from './shared/components/player-edit/player-edit.component';
 
-
-
 @NgModule({
   declarations: [
     AppComponent,

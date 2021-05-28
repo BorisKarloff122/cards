@@ -15,7 +15,7 @@ export class MenuComponent implements OnInit, OnDestroy {
 
   constructor(
     private mainService: MainService
-  ) { }
+  ) {}
 
   ngOnInit(): void {
     this.loadData();
