@@ -56,14 +56,14 @@
 }
 
 .player-info .player-buttons{
-  border:1.2px solid #f4eb2a;
-  background-color:transparent;
+  border: 1.2px solid #f4eb2a;
+  background-color: transparent;
   border-radius: 360px;
   text-align: center;
-  margin:0 10px;
+  margin: 0 10px;
   vertical-align: middle;
-  width:25px;
-  outline:none;
+  width: 25px;
+  outline: none;
   height:25px;
   cursor: pointer;
   display:flex;
@@ -72,8 +72,16 @@
 }
 
 .player-buttons mat-icon{
-  color:#f4eb2a;
-  width:20px;
-  height:20px;
-  font-size:15px;
+  color: #f4eb2a;
+  width: 20px;
+  height: 20px;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
+
+
+
+

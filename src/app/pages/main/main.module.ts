@@ -24,6 +24,7 @@ import { CustomUiModule } from "../../shared/modules/custom-ui.module";
     MainRoutingModule,
     MaterialModule,
     CustomUiModule
-  ]
+  ],
+
 })
 export class MainModule { }

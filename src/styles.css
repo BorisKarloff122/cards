@@ -1,6 +1,13 @@
 html, body { height: 100%; }
 
-body { margin: 0; font-size:14px; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body {
+  margin: 0; font-size:14px;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-repeat: no-repeat;
+  background-position:center;
+  background-image:url('./assets/img/main_bg.jpg');
+  background-size: cover;
+}
 
 .icon{
   cursor: pointer;

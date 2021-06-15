@@ -3,7 +3,6 @@
     {
       "userName": "tony",
       "userPassword": "123",
-      "passwordMatch": "123",
       "email": "test@test.com",
       "decks": [],
       "selectedDeck": 1,
@@ -15,16 +14,15 @@
   ],
   "activeUser": [
     {
-      "userName": "tony",
-      "userPassword": "123",
-      "passwordMatch": "123",
-      "email": "test@test.com",
-      "decks": [],
-      "selectedDeck": 1,
-      "level": 1,
-      "expRequired": 1000,
-      "icon": "../assets/img/warlords/knight.png",
-      "id": 1
+    "userName": "tony",
+    "userPassword": "123",
+    "email": "test@test.com",
+    "decks": [],
+    "selectedDeck": 1,
+    "level": 1,
+    "expRequired": 1000,
+    "icon": "../assets/img/warlords/knight.png",
+    "id": 1
     }
   ],
   "warlords": [
