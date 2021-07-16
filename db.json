@@ -67,5 +67,25 @@
       "imagePath": "../assets/img/warlords/knight.png"
     }
   ],
-  "stats": []
+  "stats": [],
+  "feed": [
+    {
+      "id":  1,
+      "short-text":  "This is a test news-feed text.This is a test news-feed text.This is a test news-feed text.",
+      "text": "This is a test news-feed text.This is a test news-feed text.This is a test news-feed text.This is a test news-feed text.This is a test news-feed text.This is a test news-feed text.This is a test news-feed text.This is a test news-feed text.This is a test news-feed text.This is a test news-feed text.This is a test news-feed text.This is a test news-feed text.This is a test news-feed text.This is a test news-feed text.This is a test news-feed text.",
+      "feed-header": "testHeader"
+    },
+    {
+      "id": 2,
+      "short-text":  "This is a test news-feed text.This is a test news-feed text.This is a test news-feed text.",
+      "text": "This is a test news-feed text.This is a test news-feed text.This is a test news-feed text.This is a test news-feed text.This is a test news-feed text.This is a test news-feed text.This is a test news-feed text.This is a test news-feed text.This is a test news-feed text.This is a test news-feed text.This is a test news-feed text.This is a test news-feed text.This is a test news-feed text.This is a test news-feed text.This is a test news-feed text.",
+      "feed-header": "testHeader"
+    },
+    {
+      "id": 3,
+      "short-text":  "This is a test news-feed text.This is a test news-feed text.This is a test news-feed text.",
+      "text": "This is a test news-feed text.This is a test news-feed text.This is a test news-feed text.This is a test news-feed text.This is a test news-feed text.This is a test news-feed text.This is a test news-feed text.This is a test news-feed text.This is a test news-feed text.This is a test news-feed text.This is a test news-feed text.This is a test news-feed text.This is a test news-feed text.This is a test news-feed text.This is a test news-feed text.",
+      "feed-header": "testHeader"
+    }
+  ]
 }

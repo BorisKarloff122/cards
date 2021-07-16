@@ -1,18 +1,48 @@
 .menu-button{
   min-width:150px;
-  height:35px;
-  background: linear-gradient(0, rgb(27 76 224 / 84%) 0%, rgb(25 93 144 / 96%) 16%, rgba(0,212,255,1) 100%);
-  font-weight:500;
-  color:#fff;
-  font-size:16px;
-  border: none;
-  margin: -5px;
-  padding: 0;
-  cursor: pointer;
-  outline: none;
-  display:flex;
-  align-items: center;
   justify-content: center;
+  position:relative;
+  z-index:1;
+  overflow: hidden;
+  display:flex;
+  cursor: pointer;
+  align-items: center;
+  border:2px solid #f4eb2a;
+  color:#f4eb2a;
+  height:40px;
+  font-size:16px;
+  border-radius:4px;
+  font-weight:bold;
 }
 
+.menu-button .content{
+  z-index:2;
+  position:relative;
+}
+
+.menu-button:hover{
+  z-index:2;
+  color: rgba(0, 0, 0, 0.53);
+  -webkit-transition: 0.45s all ease-out;
+}
+
+.menu-button:after{
+  border-bottom:1px solid #f4d431;
+  width: 100%;
+  z-index:1;
+  background-color: #f4eb2a;
+  content:"";
+  position:absolute;
+  left:0;
+  height:60px;
+  bottom:-100px;
+  -webkit-transition: 0.75s all ease-in-out;
+}
+
+
+.menu-button:hover:after{
+
+  bottom:0;
+  -webkit-transition: 0.75s all ease-in-out;
+}
 

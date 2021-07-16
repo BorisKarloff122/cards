@@ -6,7 +6,7 @@
   </div>
   <form [formGroup]="regForm">
     <mat-form-field>
-      <input matInput formControlName="userName" type="text" placeholder="User Name">
+      <input matInput formControlName="userName" type="text" placeholder="User Name*">
       <mat-error *ngIf="getter.userName.invalid && isSubmitted ||
        getter.userName.invalid && getter.userName.touched">
         <span *ngIf = "getter.userName.errors.required"> User name cannot be empty!</span>
@@ -16,7 +16,7 @@
       <input matInput
              formControlName="userPassword"
              type="{{showPassword ? 'text': 'password'}}"
-             placeholder="User Password">
+             placeholder="User Password*">
       <mat-icon
         class = "icon"
         style="color:#fff"
@@ -62,9 +62,10 @@
       </mat-error>
     </mat-form-field>
     <div class="line">
+      <div class="text">Already registered?</div>
       <a [routerLink] = "['../login']">
         <mat-icon>chevron_left</mat-icon>
-        Sign in
+        <span  style="text-decoration: underline">Sign in</span>
       </a>
     </div>
     <div class="actions">

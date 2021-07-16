@@ -8,12 +8,15 @@ import { Component, Input, OnInit } from '@angular/core';
 
 export class MenuButtonComponent implements OnInit {
   public style: {} = {};
+  public isLink = false;
   @Input() addClass!: string[] | string;
   @Input() link!: string;
 
   constructor() {}
 
   ngOnInit(): void {
-
+    if(this.link){
+      this.isLink = true;
+    }
   }
 }

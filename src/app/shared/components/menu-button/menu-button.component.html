@@ -1,6 +1,11 @@
 <div [ngClass]="addClass? addClass : 'menu-button'"
      class="menu-button">
-  <ng-content></ng-content>
+
+    <span class="content">
+      <ng-content></ng-content>
+    </span>
+
+
 </div>
 
 

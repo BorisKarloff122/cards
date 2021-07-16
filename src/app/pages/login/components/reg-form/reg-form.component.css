@@ -59,9 +59,13 @@ form mat-form-field{
   margin-right:10px;
 }
 
+
 .line{
   width:100%;
   margin:20px auto;
+  display:flex;
+  align-items:center;
+  justify-content: center;
 }
 
 .line a{
@@ -72,8 +76,19 @@ form mat-form-field{
   justify-content: center;
 }
 
+.line:hover a mat-icon{
+  color:#e3db26;
+  left: -10px;
+  transition: 0.4s all ease-in-out;
+  -webkit-transition:0.4s all ease-in-out;
+}
+
 .line a mat-icon{
   display: flex;
+  position:relative;
+  transition: 0.4s all ease-in-out;
+  -webkit-transition:0.4s all ease-in-out;
+  left:0;
   align-items:center;
   justify-content: center;
 }
@@ -108,6 +123,15 @@ form .hidden{
   color:#fff;
 }
 
+.message{
+  transition-duration: 0.4s;
+  -webkit-transition-duration: 0.4s;
+  -ms-transition-duration:0.4s;
+  opacity: 1;
+  margin-bottom:20px;
+}
+
+
 .mat-input-element,
 .mat-form-field.mat-warn .mat-input-element, .mat-form-field-invalid .mat-input-element {
   caret-color: #f4eb2a;
@@ -133,4 +157,10 @@ form .hidden{
 
 .mat-form-field-appearance-legacy .mat-form-field-infix{
   font-size:16px;
+}
+
+.text{
+  text-align: center;
+  color:#fff;
+  margin-right:10px;
 }

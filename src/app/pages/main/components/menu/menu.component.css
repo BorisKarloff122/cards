@@ -9,7 +9,6 @@
 .img_block .img-container{
   width: 100px;
   height: 100px;
-  background-color: #ec8e61;
   border-radius: 360px;
   position: relative;
   margin: 0 auto;
@@ -32,9 +31,50 @@
   height:100%;
 }
 
+app-menu .button_block,
+app-menu{
+  width:100%;
+}
+
+.menu menu-button{
+  width:24.5%;
+  margin:0 2.4%;
+}
+
+.container{
+  width:100%;
+}
+
+
+
+.main-button:hover{
+  background-color:transparent;
+}
+
+.main-button{
+  width: 95%;
+  text-transform: uppercase;
+  cursor: pointer;
+  height: 50px;
+  margin: 20px auto;
+  display: block;
+  border-radius: 4px;
+  background-color:#f4eb2a;
+  color: rgba(0, 0, 0, 0.53);
+  border: 2px solid #f4eb2a;
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.button_block
+{
+  margin-top:10px;
+  width: 70%;
+}
+
 .menu{
   display: flex;
-  width:50%;
+  width:100%;
   margin:0 auto;
   flex-direction: row;
   align-items: center;
@@ -80,8 +120,5 @@
   align-items: center;
   justify-content: center;
 }
-
-
-
 
 

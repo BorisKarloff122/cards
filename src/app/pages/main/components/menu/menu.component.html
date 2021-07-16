@@ -1,31 +1,11 @@
   <div class="container">
-    <div class="side-bar">
-      <div class="img_block">
-        <div class="player-stats">
-          <div class="name">{{player.userName}}</div>
-          <div class="player-lvl">Level: {{ player.level }}</div>
-        </div>
-        <div class="player-info">
-          <button class="player-buttons playerInfo"><mat-icon>manage_accounts</mat-icon></button>
-          <button class="player-buttons playerStats"><mat-icon>content_paste</mat-icon></button>
-        </div>
-      </div>
-    </div>
-    <div class="field content">
-      <div class="warlord_img big_img_block">
-<!--        <img src="{{player.warlord.imagePath}}"/>-->
-      </div>
-      <div class="warlord_img big_img_block"></div>
-    </div>
     <div class="button_block">
       <div class="menu">
-        <menu-button>Collection</menu-button>
-        <a [routerLinkActive]="'activeLink'" [routerLink]="'collection'">Collection</a>
-        <a [routerLinkActive]="'activeLink'" [routerLink] = "'decks'">Decks</a>
-        <a [routerLinkActive]="'activeLink'" [routerLink]="'stats'">Player Stats</a>
-        <a [routerLinkActive]="'activeLink'" [routerLink] = "'warlords'">Warlords</a>
+        <menu-button [link]="'collection'">Collection</menu-button>
+        <menu-button>Decks</menu-button>
+        <menu-button>Player Stats</menu-button>
+        <menu-button>Warlords</menu-button>
       </div>
-      <button class="main-button start">Start!</button>
     </div>
 </div>
 
